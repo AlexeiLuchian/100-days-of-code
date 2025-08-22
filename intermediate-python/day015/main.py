@@ -27,6 +27,12 @@ def get_coins():
     pennies = float(input("Insert the number of pennies: "))
     return quarters*0.25 + nickles*0.1 + dimes*0.05 + pennies*0.01
  
+def make_coffee(user_choice):
+    global money
+    for resource in resources:
+        resources[resource] -= MENU[user_choice]["ingredients"][resource]
+    money += MENU[user_choice]["cost"]
+
 def start_machine():
     machine_on = True
     while machine_on:
@@ -37,8 +43,8 @@ def start_machine():
                 if coins >= MENU[user_choice]["cost"]:
                     if coins > MENU[user_choice]["cost"]:
                         print(f"Here is ${round(coins - MENU[user_choice]["cost"],2)} in change.")
-                    print("all good")
-                    print(f"🫘  Your {user_choice} is being prepared! 🫘")
+                    make_coffee(user_choice)
+                    print(f"🫘  Here is your {user_choice}. Enjoy! 🫘")
                 else:
                     print("Sorry that's not enough money. Money refunded. 💰")
         elif user_choice == "off":
