@@ -37,10 +37,7 @@ while game_on:
     if answer == None or nr_of_correct_guesses == 50:
         game_on = False
     
-states_to_learn = []
-for state in states_dict:
-    if state not in correct_guesses:
-        states_to_learn.append(state)
+states_to_learn = [state for state in states_dict if state not in correct_guesses]
 
 new_dataframe = pandas.DataFrame(states_to_learn)
 new_dataframe.to_csv('states_to_learn.csv')
