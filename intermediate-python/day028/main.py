@@ -10,8 +10,18 @@ SHORT_BREAK_TIME = 5 * 60
 LONG_BREAK_TIME = 20 * 60 
 CHECK_MARK = "✔️"
 REPS = 0
+timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- # 
+
+def reset_timer():
+    global REPS
+    REPS = 0
+    checkmark_label.config(text="")
+    title_label.config(text="Timer", fg=GREEN)
+    canvas.itemconfig(timer_text, text="00:00")
+    window.after_cancel(timer)
+    
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
@@ -22,18 +32,19 @@ def start_timer():
 
     if REPS % 8 == 0:
         title_label.config(text="LONG BREAK", fg=RED)
-        countdown(15)
+        countdown(LONG_BREAK_TIME)
     elif REPS % 2 == 1:
         title_label.config(text="WORK TIME", fg=GREEN)
-        countdown(10)
+        countdown(WORK_TIME)
     else:
         title_label.config(text="SHORT BREAK", fg=PINK)
-        countdown(5)
+        countdown(SHORT_BREAK_TIME)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 def countdown(count):
 
+    global timer
     mins = int(count / 60)
     secs = count % 60
 
@@ -43,9 +54,9 @@ def countdown(count):
     if secs < 10:
         secs = f"0{secs}"
 
-    canvas.itemconfig(timer, text=f"{mins}:{secs}")
+    canvas.itemconfig(timer_text, text=f"{mins}:{secs}")
     if count >= 0:
-        window.after(1000, countdown, count - 1)
+        timer = window.after(1000, countdown, count - 1)
     else:
         if REPS % 2 == 1:
             checkmark_label.config(text= checkmark_label.cget("text") + CHECK_MARK)
@@ -64,13 +75,13 @@ canvas = tkinter.Canvas(width=200, height=224)
 canvas.config(bg=YELLOW, highlightthickness=0)
 tomato_img = tkinter.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
-timer = canvas.create_text(100,140,text="00:00",fill="white", font =(FONT_NAME, 30, "bold"))
+timer_text = canvas.create_text(100,140,text="00:00",fill="white", font =(FONT_NAME, 30, "bold"))
 canvas.grid(row=1, column=1)
 
 start_button = tkinter.Button(text="Start", command=start_timer)
 start_button.grid(row=2, column=0)
 
-reset_button = tkinter.Button(text="Reset")
+reset_button = tkinter.Button(text="Reset", command=reset_timer)
 reset_button.grid(row=2,column=2)
 
 checkmark_label = tkinter.Label(text="", font=(FONT_NAME, 20, "bold"), bg=YELLOW, fg=GREEN)
