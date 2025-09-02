@@ -18,20 +18,17 @@ REPS = 0
 def start_timer():
 
     global REPS
-    if REPS == 0:
-        checkmark_label.config(text="")
-
     REPS += 1
 
-    if REPS % 2 == 1:
-        countdown(5)
+    if REPS % 8 == 0:
+        title_label.config(text="LONG BREAK", fg=RED)
+        countdown(15)
+    elif REPS % 2 == 1:
+        title_label.config(text="WORK TIME", fg=GREEN)
+        countdown(10)
     else:
-        if REPS != 8:
-            countdown(1)
-        else:
-            REPS = 0
-            checkmark_label.config(text= checkmark_label.cget("text") + "\nWELL DONE!\nLONG BREAK")
-            countdown(7)
+        title_label.config(text="SHORT BREAK", fg=PINK)
+        countdown(5)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
@@ -48,8 +45,6 @@ def countdown(count):
 
     canvas.itemconfig(timer, text=f"{mins}:{secs}")
     if count >= 0:
-        if REPS == 0 and count == 0:
-            count = -1
         window.after(1000, countdown, count - 1)
     else:
         if REPS % 2 == 1:
