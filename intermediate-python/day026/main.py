@@ -10,6 +10,10 @@ while go_on:
     word = input("Input a word: ").upper()
     if word == "OFF":
         break
-    result = [characters[char] for char in word if char in characters]
-    print(result)
+    try:
+        result = [characters[char] for char in word]
+    except:
+        print("Please use normal words, aka composed by letters.")
+    else:
+        print(result)
     
