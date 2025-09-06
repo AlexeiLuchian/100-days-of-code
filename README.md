@@ -12,7 +12,7 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 30 / 100 ✅  
+- **Current Day:** Day 31 / 100 ✅  
 - **Phase:** Intermediate Python  
 - **Last Project Completed:** Password Manager GUI App with Tkinter  
   
