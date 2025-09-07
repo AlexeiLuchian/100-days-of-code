@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 31 / 100 ✅  
-- **Phase:** Intermediate Python  
-- **Last Project Completed:** Password Manager GUI App with Tkinter  
+- **Current Day:** Day 32 / 100 ✅  
+- **Phase:** Intermediate+  
+- **Last Project Completed:** Flashcards App with Tkinter  
   
 ---
   

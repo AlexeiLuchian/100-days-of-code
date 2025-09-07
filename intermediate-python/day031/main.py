@@ -17,7 +17,6 @@ def next_card(pressed_button):
     window.after_cancel(flip_timer)
     try:
         if pressed_button == "correct":
-                print(CURRENT_CARD["French"])
                 vocabulary.remove(CURRENT_CARD)
 
         dataframe = pandas.DataFrame(vocabulary)
@@ -32,11 +31,9 @@ def next_card(pressed_button):
         messagebox.showinfo(title="Congratulations", message="You've learned the top 100 most used french words.\nThere are no other words in the bank.")
 
 try:
-    with open("./data/words_to_learn.csv", "r") as file:
-        data = pandas.read_csv(file)
+    data = pandas.read_csv("./data/words_to_learn.csv")
 except:
-    with open("./data/french_words.csv", "r") as file:
-        data = pandas.read_csv(file)
+    data = pandas.read_csv("./data/french_words.csv")
 finally:
     vocabulary = data.to_dict(orient="records")    
 
@@ -61,7 +58,6 @@ wrong_button_img = PhotoImage(file="./images/wrong.png")
 wrong_button = Button(image=wrong_button_img, highlightthickness=0, command=lambda: next_card(pressed_button="wrong"))
 wrong_button.grid(row=1, column=1)
 
-print(vocabulary)
 next_card("")
 window.mainloop()
 
