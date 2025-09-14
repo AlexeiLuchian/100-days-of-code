@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 33 / 100 ✅  
+- **Current Day:** Day 34 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** Manage dates with datetime and send emails with smtplib  
+- **Last Project Completed:** ISS Overhead Notifier Project  
   
 ---
   
