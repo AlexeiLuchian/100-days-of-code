@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 34 / 100 ✅  
+- **Current Day:** Day 35 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** ISS Overhead Notifier Project  
+- **Last Project Completed:** GUI Quiz App with API 
   
 ---
   
