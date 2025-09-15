@@ -110,7 +110,7 @@ I've separated my code and projects into 4 main sub-repos that represent my lear
 - Templating with Jinja 2
 - WTForms
   
-📂 [Intermediate+ Folder (Not created yet)](./)  
+📂 [Intermediate+ Folder](./intermediate+/)  
   
 ---
   
