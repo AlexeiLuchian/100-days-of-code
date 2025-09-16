@@ -12,7 +12,7 @@ class QuizInterface():
         self.window.title("Quizlet")
         self.window.config(bg=THEME_COLOR, padx=20, pady=20)
 
-        self.score_label = Label(text=f"Score: {self.score}", bg=THEME_COLOR, fg="white")
+        self.score_label = Label(text=f"Score: {self.score}", bg=THEME_COLOR, fg="white", font=("Arial", 20, "bold"))
         self.score_label.grid(row=0, column=1)
 
         self.canvas = Canvas(width=300, height=250)
