@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 35 / 100 ✅  
+- **Current Day:** Day 36 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** GUI Quiz App with API 
+- **Last Project Completed:** Send Rain Alert SMS
   
 ---
   
