@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 36 / 100 ✅  
+- **Current Day:** Day 37 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** Send Rain Alert SMS
+- **Last Project Completed:** Trading News Alert Project
   
 ---
   
@@ -115,7 +115,7 @@ I've separated my code and projects into 4 main sub-repos that represent my lear
 ---
   
 ### 4. Advanced Python (59-81)  
-***📘 What I Will Learn:**  
+**📘 What I Will Learn:**  
 - Build Your Own REST API with Python
 - Build Your Own Blog
 - Databases with SQLite
