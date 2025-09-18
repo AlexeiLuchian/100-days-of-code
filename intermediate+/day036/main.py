@@ -2,12 +2,11 @@ import os
 import requests
 import datetime as dt
 import twilio.rest
-from info import twilio_sid, twilio_token, pn, tpn
+from info import twilio_sid, twilio_token, pn, tpn, news_api_key
+from info import av_api_key as api_key
 
 STOCK = "NVDA"
 COMPANY_NAME = "NVIDIA Corporation"
-api_key = os.environ.get("ALPHAVANTAGE_API_KEY")
-news_api_key = os.environ.get("NEWS_API_KEY")
 
 alphavantage_endpoint = "https://www.alphavantage.co/query?"
 av_params = {
@@ -52,8 +51,9 @@ if True:
 
     news_data = news_response.json()
     most_popular_articles = news_data["articles"][:3]
-    messages = [f"Headline: {article['title']}\nBrief: {article['description']}" for article in most_popular_articles]
+    messages = [f"{STOCK}: {emoji}{percentage}%\nHeadline: {article['title']}\nBrief: {article['description']}" for article in most_popular_articles]
 
     client = twilio.rest.Client(twilio_sid, twilio_token)
     for message in messages:
-        client.messages.create(body=f"{STOCK}: {emoji}{percentage}%\n{message}", from_=tpn, to=pn)
+        print(message)
+        client.messages.create(body=message, from_=tpn, to=pn)
