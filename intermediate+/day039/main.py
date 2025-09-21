@@ -1,0 +1,3 @@
+from flight_deals import search_cheaper_flights
+
+search_cheaper_flights()
