@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 40 / 100 ✅  
+- **Current Day:** Day 43 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** Flight Deal Finder
+- **Last Project Completed:** Birthday Invite Website
   
 ---
   
