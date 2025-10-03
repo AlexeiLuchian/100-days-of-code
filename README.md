@@ -12,9 +12,9 @@ You can check the full syllabus here:
 ---
   
 ## 📊 My progress  
-- **Current Day:** Day 43 / 100 ✅  
+- **Current Day:** Day 46 / 100 ✅  
 - **Phase:** Intermediate+  
-- **Last Project Completed:** Birthday Invite Website
+- **Last Project Completed:** Web Scraping with Beautiful Soup
   
 ---
   
