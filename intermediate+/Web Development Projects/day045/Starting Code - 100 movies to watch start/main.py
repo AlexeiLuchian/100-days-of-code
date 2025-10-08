@@ -11,6 +11,6 @@ soup = BeautifulSoup(response.text, 'html.parser')
 movies_headers = soup.find_all(name="h3", class_="title")
 movie_titles = [title.getText() for title in movies_headers]
 
-with open("movies.txt", 'a') as file:
+with open("movies.txt", 'w', encoding='utf-8') as file:
     for i in range(len(movie_titles)-1,-1,-1):
-        file.write(movie_titles[i]+"\n")
+        file.write(f"{movie_titles[i]}\n")
